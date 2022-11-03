@@ -2,5 +2,31 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: #ccc;
+}
+.nav-container h1{
+    cursor: pointer;
+    transform: all .2s;
+    transform: scale(.85);
+    padding: 4px;
+}
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    gap: 8px;
+}
+.nav-list a{
+    color: #ccc;
+    text-decoration: none;
+    text-align: center;
+    padding: 7px;
+    border-radius: 6px;
+    background-color: #151520;
+    transform: scale(.85);
+    transition: all .2s;
+}
+.nav-list a:hover, .nav-container h1:hover{
+    transform: scale(1);
 }
