@@ -1,6 +1,11 @@
-
-export default function MainLayout(){
+import Footer from "../components/Footer"
+import Nav from "../components/Nav"
+export default function MainLayout(props){
     return (
-        <p>starting...</p>
+        <>
+            <Nav />
+            {props.children}
+            <Footer/>
+        </>
     )
 }

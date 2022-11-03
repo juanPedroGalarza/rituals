@@ -1,0 +1,6 @@
+.nav-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+}
