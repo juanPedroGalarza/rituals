@@ -5,7 +5,7 @@ export default function Nav(props) {
     const [drop, setDrop] = useState(true)
     const printItem = (item) => {
         return (
-            <Link to={item.to}>{item.title}</Link>
+            <Link to={item.to} onClick={() => setDrop(!drop)}>{item.title}</Link>
         )
     }
     return (
