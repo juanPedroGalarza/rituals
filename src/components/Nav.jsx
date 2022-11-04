@@ -2,10 +2,12 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import "../styles/Nav.css"
 export default function Nav(props) {
-    const [drop, setDrop] = useState(true)
+    const [drop, setDrop] = useState(false)
     const printItem = (item) => {
         return (
-            <Link to={item.to} onClick={() => setDrop(!drop)}>{item.title}</Link>
+            <Link key={item.title}
+                to={item.to}
+                onClick={() => setDrop(!drop)}>{item.title}</Link>
         )
     }
     return (
