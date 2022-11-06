@@ -15,7 +15,7 @@ export const userSlice = createSlice({
         },
         nextCap: (state,action) => {
             let cap = caps[action.payload.cap]
-            state.selected = cap[action.payload.selected]
+            state.selected = cap[action.payload.selection]
             state.optSelected = null
         },
         stopWriting: (state) => {
