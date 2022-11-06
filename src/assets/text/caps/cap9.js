@@ -12,9 +12,10 @@ const cap = {
             },
             {
                 text: "contar la historia a detalle",
-                selection: "b", cap: 10
-            }//si elige esta opcion NO es mudo
-        ]//si es mudo la ultima opcion no esta
+                selection: "b", cap: 10,
+                action: "NO_MUTED", condition: "NO_MUTED"
+            }
+        ]
     },
     b: {
         text: 'El taxi estaba ocupado igualmente asi no lo hubieras podido usar... Sigues caminando cuando de repente todo se pone rojo, todo es tan rojo que no puedes ver figuras, solo rojo.',
@@ -72,7 +73,7 @@ const cap = {
         ]
     },
     f: {
-        text: "Intentas hacer fuerza para desatarte pero del esfuerzo la vista se te empieza a nublar y no eres conciente de tu al, mas que de unos ruidos graves. Cuando recuperas la compostura ves en el centro un charco de sangre y una figura extraña que se camufla apenas en el rojo. Cuando termina regresa a hacer otra vez ese ruido grave, pero esta vez aturde y el color rojo empieza a esparcirce por todos lados.",
+        text: "Intentas hacer fuerza para desatarte, pero del esfuerzo la vista se te empieza a nublar y no eres conciente de tu alrededor, mas que de unos ruidos graves. Cuando recuperas la compostura ves en el centro un charco de sangre y una figura extraña que se camufla apenas en el rojo. Cuando termina, regresa a hacer otra vez ese ruido grave, pero esta vez aturde y el color rojo empieza a esparcirce por todos lados.",
         options: [
             {
                 ...optionFly

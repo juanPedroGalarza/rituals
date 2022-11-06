@@ -1,17 +1,20 @@
 const optionsAB = [
     {
         text: '"gracias Pepe"',
-        selection: "b", cap: 11
+        selection: "b", cap: 11,
+        condition: "NO_MUTED"
     },
     {
         text: '"te pagare igual"',
-        selection: "c", cap: 11
+        selection: "c", cap: 11,
+        condition: "NO_MUTED"
     },
     {
         text: '...',
-        selection: "a", cap: 11
-    },
-]//si NO es mudo la ultima opcion no esta || si es mudo solo esta la ultima
+        selection: "a", cap: 11,
+        condition: "MUTED"
+    }
+]
 const cap = {
     a: {
         text: '"Se ve que fue demasiado si nisiquiera puedes decirme nada" Luego de un largo viaje llegan a tu casa, estas por vajarte para ir a buscar el dinero cuando te dice: "No tienes porque pagarme es suficiente con haberte ayudado :)"',

@@ -3,12 +3,12 @@ const cap = {
         text: 'Observas a alguien tirando sal en el piso de lo que antes era el comedor, pero ahora esta vacio. En tu vista se te cruza el conductor, le da un cuchillo al que estaba poniendo la sal y este empieza a hacer marcas en el piso. Al ver todo esto quedas impactado y sigues mirando un poco mas cuando alguien mas trae una especie de asiento que definitivamente no era uno de los que estaban usando antes. Te das la vuelta y observas una ventana como tu unica alternativa, en el baño se encuentran unos objetos que talvez podrias usar:',
         options: [
             {
-                text: 'ropa sucia',
-                selection: "a", cap: 7
-            },
-            {
                 text: 'cepillo',
                 selection: "b", cap: 7
+            },
+            {
+                text: 'ropa sucia',
+                selection: "a", cap: 7
             },
             {
                 text: 'peine',

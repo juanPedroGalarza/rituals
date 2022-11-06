@@ -13,7 +13,7 @@ const cap = {
         ]
     },
     b: {
-        text: 'Te alejas en silencio hasta pueblo, por suerte no te persiguio nadie, el pueblo parece estar vacio... Cansado te tiras al piso mirando al cielo, este se pone rojo... Pero parace que no puedes dejar de mirar el cielo rojo...',
+        text: 'Te alejas en silencio hasta el pueblo, por suerte no te persiguio nadie, el pueblo parece estar vacio... Cansado te tiras al piso mirando al cielo, este se pone rojo... Pero parace que no puedes dejar de mirar el cielo rojo...',
         options: [
             {
                 text: "rojo",

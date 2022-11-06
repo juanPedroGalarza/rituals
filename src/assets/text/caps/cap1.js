@@ -8,10 +8,14 @@ const cap = {
             },
             {
                 text: '"no entiendo"',
-                selection: "a",cap:2},
+                selection: "a", cap: 2,
+                action: "NO_MUTED"
+            },
             {
                 text: "quedarse callado",
-                selection: "b", cap: 2}
+                selection: "b", cap: 2,
+                action: "IS_MUTED"
+            }
         ],
     },
     b: {
@@ -44,7 +48,7 @@ const cap = {
                 selection: "c", cap: 2
             },
             {
-                text: "DEPERTAR",
+                text: "disco 2",
                 selection: "c", cap: 2
             },
         ],

@@ -12,8 +12,9 @@ const cap = {
             },
             {
                 text: "llama un taxi",
-                selection: "c", cap: 8
-            }//si es mudo la ultima opcion no esta disponible
+                selection: "c", cap: 8,
+                condition: "NO_MUTED"
+            }
         ]
     },
     b: {

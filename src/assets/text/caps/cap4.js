@@ -1,29 +1,30 @@
 let optionsAB = [
     {
         text: 'asentir con la cabeza',
-        selection: "a", cap: 5
+        selection: "a", cap: 5,
+        condition: "MUTED"
     },
     {
         text: 'negar con la cabeza',
-        selection: "a", cap: 5
+        selection: "a", cap: 5,
+        condition: "MUTED"
     },
     {
-        text: '"no gracias, prefiero quedarme"',
-        selection: "x", cap: 7
+        text: 'salir del baño',
+        selection: "x", cap: 7,
+        condition: "MUTED"
     },
-]
-/* 
-si es mudo optionsAB = [
     {
         text: '"ya salgo"',
-        selection: "x", cap: 7
+        selection: "x", cap: 7,
+        condition: "EXCLUSIVE_NO_MUTED"
     },
     {
         text: '"aun no termino"',
-        selection: "a",cap:5
+        selection: "b",cap:5,
+        condition: "EXCLUSIVE_NO_MUTED"
     }
 ]
-*/
 
 const optionsDE = [
     {
@@ -42,11 +43,11 @@ const optionsDE = [
 
 const cap = {
     a: {
-        text: 'Luego de terminar la comida, sientes un dolor de estomago inmenso, te diriges a uno de los baño a largar todo. Al finalizar, el dolor sigue igual, alguien golpea la puerta: -Er du ok?',
+        text: 'Luego de terminar la comida, sientes un dolor de estomago inmenso, te diriges a uno de los baños a largar todo. Al finalizar, el dolor sigue igual, alguien golpea la puerta: -Er du ok?',
         options: optionsAB,
     },
     b: {
-        text: 'Luego de terminar la comida, sientes un dolor de estomago inmenso y te diriges a uno de los baño a largar todo. Al finalizar, el dolor sigue pero no hay mas, alguien golpea la puerta: -¿Te falta mucho?',
+        text: 'Luego de terminar la comida, sientes un dolor de estomago inmenso y te diriges a uno de los baños a largar todo. Al finalizar, el dolor sigue pero no hay mas, alguien golpea la puerta: -¿Te falta mucho?',
         options: optionsAB,
     },
     c: {

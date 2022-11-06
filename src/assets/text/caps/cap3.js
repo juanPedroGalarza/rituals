@@ -1,14 +1,20 @@
-const textBC = "Te subes al auto y luego de arrancar prenden la musica nuevamente. Luego de un largo camino llegan a una enorme casa a las afueras de un pueblo, cuando estan por estacionar el 'Traductor' te dice te dice: -¿Quieres acompañarnos a comer?"
+const textBC = "Te subes al auto y luego de arrancar prenden la musica nuevamente. Luego de un largo camino llegan a una enorme casa a las afueras de un pueblo, cuando estan por estacionar el 'Traductor' te dice: -¿Quieres acompañarnos a comer?"
 
 const optionsAB= [
     {
         text: "asentir con la cabeza",
-        selection: "a", cap: 4
+        selection: "a", cap: 4,
+        condition: "MUTED"
+    },
+    {
+        text: "asentir con la cabeza",
+        selection: "b", cap: 4,
+        condition: "EXCLUSIVE_NO_MUTED"
     },
     {
         text: "negar con la cabeza",
         selection: "c",cap:4}
-]//si NO es mudo(mute) la primera opcion cambia a "b"
+]
 
 const cap = {
     a: {
