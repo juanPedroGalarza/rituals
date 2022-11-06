@@ -69,7 +69,7 @@ const cap = {
         ]
     },
     x: {
-        text: "Cuando despiertas te encuentras atado en una especie de asiento muy incomodo. Estas atado y con la boca tapada, no se ve nada mas que un humo rojo y siluetas. Estas siluetas parecen mas personas atadas formando un circulo, en el centro tambien hay dos atadas en sillas, ademas hay una parada con algo extraño en la cabeza que se parece como un ave. Es tan extrañamente grande que dudas que sea el craneo de un ave, parece otra cosa.",
+        text: "Cuando despiertas te encuentras atado y con la boca tapada en una especie de asiento muy incomodo. No se ve nada mas que un humo rojo y unas siluetas, estas parecen personas atadas formando un circulo. En el centro hay dos mas y una parada con algo extraño en la cabeza que se parece a el craneo de un ave. Pero es tan grande que debe ser otra cosa.",
         options: [
             {
                 text: "no hacer nada",
