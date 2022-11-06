@@ -28,7 +28,7 @@ const cap = {
         ],
     },
     c: {
-        text: "¿Que necesidad de hacer eso? Por tu mala actitud se vajan dos personas del auto y te mandan a dormir.",
+        text: "¿Que necesidad de hacer eso? Por tu mala actitud se bajan dos personas del auto y te mandan a dormir.",
         options: [
             {
                 text: "despertar",
