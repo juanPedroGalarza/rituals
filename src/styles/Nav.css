@@ -30,3 +30,33 @@
 .nav-list a:hover, .nav-container h1:hover{
     transform: scale(1);
 }
+@media (max-width: 1200px) {
+    .nav-container{
+        position: relative;
+        background-color: #202021;
+        align-items: flex-start;
+    }
+    .nav-list{
+        position: absolute;
+        top: calc(2rem + 11px);
+    }
+}
+@media (max-width: 1095px) {
+    .nav-container{
+        flex-direction: row;
+    }
+    .nav-list{
+        position: static;
+        flex-direction: row;
+        padding-top: 7px;
+    }
+}
+@media (max-width: 425px){
+    .nav-container{
+        flex-direction: column;
+    }
+    .nav-list{
+        flex-direction: column;
+        padding: 0;
+    }
+}
