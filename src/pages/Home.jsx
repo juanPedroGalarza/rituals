@@ -9,7 +9,7 @@ export default function Home() {
             <div className="home-description">
                 <WriteText interval={100}>{text.description}</WriteText>
             </div>
-            <Link to="/play">{"JUGAR :)"}</Link>
+            <Link to="/jugar">{"JUGAR :)"}</Link>
         </main>
     )
 }

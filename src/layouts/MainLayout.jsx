@@ -2,9 +2,9 @@
 import Nav from "../components/Nav"
 export default function MainLayout(props) {
     const list = [
-        {to:"/",title:"Home"},
-        {to:"/play",title:"Play"},
-        {to:"/help",title:"Help"},
+        {to:"/",title:"Inicio"},
+        {to:"/jugar",title:"Jugar"},
+        {to:"/ayuda",title:"Ayuda"},
     ]
     return (
         <>

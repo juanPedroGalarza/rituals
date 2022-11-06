@@ -6,7 +6,7 @@ import { nextCap, emptyText, setFinal, reset, setMuted, setSmily } from "../feat
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
-export default function PanelText() {
+export default function PanelGame() {
     const { selected, isWrited, optSelected, isFinal, feeling } = useSelector(state => state.game)
     const dispatch = useDispatch()
     const finalText = "¿Quieres volver a jugar?"

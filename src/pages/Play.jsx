@@ -1,9 +1,9 @@
-import PanelText from "../components/PanelText"
+import PanelGame from "../components/PanelGame"
 export default function Play() {
     
     return (
         <main className="main">
-            <PanelText />
+            <PanelGame />
         </main>
     )
 }
