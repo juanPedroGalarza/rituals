@@ -7,7 +7,7 @@ export default function OptionCap({option}) {
     const inputEl = useRef(null)
     return (
         <label className={`panel-option ${inputEl.current?.checked ? "active" : ""}`}
-            onChange={() => dispatch(selectOpt(option.selection))}>
+            onChange={() => dispatch(selectOpt(option))}>
             <input
                 type="radio"
                 name="option"
