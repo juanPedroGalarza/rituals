@@ -51,11 +51,13 @@ const cap = {
         options: [
             {
                 text: ":)",
-                selection: "f", cap: 5
+                selection: "f", cap: 5,
+                action: "HAPPY"
             },
             {
                 text: ":(",
-                selection: "f", cap: 5
+                selection: "f", cap: 5,
+                action: "SAD"
             },
         ],
     },

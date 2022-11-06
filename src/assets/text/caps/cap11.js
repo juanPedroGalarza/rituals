@@ -2,7 +2,7 @@ const option =
     {
         text: 'FIN',
         selection: "a", cap: null
-}//implementar una funcion para reiniciar
+    }
 
 const cap = {
     a: {
@@ -30,8 +30,7 @@ const cap = {
         }]
     },
     e: {
-        text: "Al final volviste al mismo lugar... ",
-        //dependiendo si es mas :) o :( agregar al final del text la respectiva carita
+        text: `Al final volviste al mismo lugar... `,
         options: [{
             ...option
         }]

@@ -7,7 +7,9 @@ export const userSlice = createSlice({
         isWrited: false,
         optSelected: null,
         isFinal: false,
-        isMuted: null
+        isMuted: null,
+        smily: 0,
+        feeling: ""
     },
     reducers: {
         reset: (state) => {
@@ -15,6 +17,8 @@ export const userSlice = createSlice({
             state.isWrited = false
             state.optSelected = null
             state.isFinal = false
+            state.isMuted = null
+            state.smily = 0
         },
         nextCap: (state,action) => {
             let cap = caps[action.payload.cap]
@@ -40,6 +44,14 @@ export const userSlice = createSlice({
         },
         setMuted: (state,action)=>{
             state.isMuted = action.payload
+        },
+        setSmily: (state, action) => {
+            state.smily = + action.payload
+            if (state.smily > 0) {    
+                state.feeling = ":)"
+            } else {
+                state.feeling = ":("
+            }
         }
     },
 })
@@ -51,6 +63,7 @@ export const {
     selectOpt,
     emptyText,
     setFinal,
-    setMuted } = userSlice.actions
+    setMuted,
+    setSmily } = userSlice.actions
 
 export default userSlice.reducer

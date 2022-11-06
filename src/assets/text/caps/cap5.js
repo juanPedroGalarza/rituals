@@ -67,11 +67,13 @@ const cap = {
         options: [
             {
                 text: ":)",
-                selection: "d", cap: 9
+                selection: "d", cap: 9,
+                action: "HAPPY"
             },
             {
                 text: ":(",
-                selection: "d", cap: 9
+                selection: "d", cap: 9,
+                action: "SAD"
             },
         ],
     },
