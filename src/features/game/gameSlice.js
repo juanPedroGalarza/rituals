@@ -27,10 +27,10 @@ export const userSlice = createSlice({
             state.isWrited = false
         },
         stopWriting: (state) => {
-            state.isWrited = false
+            state.isWrited = true
         },
         startWriting: (state) => {
-            state.isWrited = true
+            state.isWrited = false
         },
         selectOpt: (state, action) => {
             state.optSelected = action.payload
