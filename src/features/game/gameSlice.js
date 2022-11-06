@@ -5,18 +5,22 @@ export const userSlice = createSlice({
     initialState: {
         selected: caps[0],
         isWrited: false,
-        optSelected: null
+        optSelected: null,
+        isFinal: false,
+        isMuted: null
     },
     reducers: {
         reset: (state) => {
             state.selected = caps[0]
             state.isWrited = false
             state.optSelected = null
+            state.isFinal = false
         },
         nextCap: (state,action) => {
             let cap = caps[action.payload.cap]
             state.selected = cap[action.payload.selection]
             state.optSelected = null
+            state.isWrited = false
         },
         stopWriting: (state) => {
             state.isWrited = false
@@ -26,6 +30,16 @@ export const userSlice = createSlice({
         },
         selectOpt: (state, action) => {
             state.optSelected = action.payload
+        },
+        emptyText: (state) => {
+            state.selected = null
+            state.isWrited = false
+        },
+        setFinal: (state) => {
+            state.isFinal = true
+        },
+        setMuted: (state,action)=>{
+            state.isMuted = action.payload
         }
     },
 })
@@ -34,6 +48,9 @@ export const {
     nextCap,
     stopWriting,
     startWriting,
-    selectOpt } = userSlice.actions
+    selectOpt,
+    emptyText,
+    setFinal,
+    setMuted } = userSlice.actions
 
 export default userSlice.reducer
