@@ -1,10 +1,11 @@
-const option = 
-    {
-        text: 'FIN',
-        selection: "a", cap: null
-    }
+import { CapMultiple, OptionCap } from "../caps";
 
-const cap = {
+const option: OptionCap = {
+    text: 'FIN',
+    selection: "a", cap: null
+};
+
+const cap: CapMultiple = {
     a: {
         text: '"Cierto...Como no te veo hace tanto se me habia olvidado que eras mudo" Luego de saludarlo y entrar a tu casa el auto se va. Vas a tu baño a lavarte la cara, te sorprende que todo este como lo dejaste y te vas a acostar a dormir... ... ... ... Justo antes de dormirte piensas. "¿Por que la puerta estaba sin llave?"',
         options: [{
@@ -48,5 +49,5 @@ const cap = {
             text: "VOLAR"
         }]
     }
-}
-export default cap
+};
+export default cap;

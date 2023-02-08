@@ -1,4 +1,6 @@
-const cap = {
+import { CapInterface } from "../caps";
+
+const cap: CapInterface = {
     text: "Estas en medio de la carretera y se acerca un auto, hay varias opciones para hacer:",
     options: [
         {
@@ -7,13 +9,16 @@ const cap = {
         },
         {
             text: "saludar",
-            selection: "b",cap:1},
+            selection: "b", cap: 1
+        },
         {
             text: "tirarle una piedra",
-            selection: "c", cap: 1},
+            selection: "c", cap: 1
+        },
         {
             text: "dejarlo pasar",
-            selection: "d", cap: 1},
+            selection: "d", cap: 1
+        },
         {
             text: "quedarse quieto",
             selection: "e", cap: 1
@@ -23,5 +28,5 @@ const cap = {
             selection: "f", cap: 11
         },
     ],
-}
-export default cap
+};
+export default cap;

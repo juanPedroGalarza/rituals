@@ -1,8 +1,11 @@
-const optionFly = {
+import { CapMultiple, OptionCap } from "../caps";
+
+const optionFly: OptionCap = {
     text: "volar",
     selection: "e", cap: 10
-}
-const cap = {
+};
+
+const cap: CapMultiple = {
     a: {
         text: 'Al subirte reconoces al taxista y resulta ser un amigo de la infancia. El tambien te reconoce y cuando estaba apunto de decirte algo, mira tu rostro y entiende que estas en aprietos. Arranca rapidamente y te lleva a tu casa. Cuando salen del pueblo te dice "No se en que te metiste esta vez ni como llegaste hasta este lugar pero puedo notar que esto es serio ¿Puedes decirme que sucede?',
         options: [
@@ -100,5 +103,5 @@ const cap = {
             }
         ]
     }
-}
-export default cap
+};
+export default cap;

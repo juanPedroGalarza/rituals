@@ -1,6 +1,8 @@
-const textBC = "Te subes al auto y luego de arrancar prenden la musica nuevamente. Luego de un largo camino llegan a una enorme casa a las afueras de un pueblo, cuando estan por estacionar el 'Traductor' te dice: -¿Quieres acompañarnos a comer?"
+import { CapMultiple, OptionCap } from "../caps";
 
-const optionsAB= [
+const textBC: string = "Te subes al auto y luego de arrancar prenden la musica nuevamente. Luego de un largo camino llegan a una enorme casa a las afueras de un pueblo, cuando estan por estacionar el 'Traductor' te dice: -¿Quieres acompañarnos a comer?";
+
+const optionsAB: Array<OptionCap> = [
     {
         text: "asentir con la cabeza",
         selection: "a", cap: 4,
@@ -13,10 +15,11 @@ const optionsAB= [
     },
     {
         text: "negar con la cabeza",
-        selection: "c",cap:4}
-]
+        selection: "c", cap: 4
+    }
+];
 
-const cap = {
+const cap: CapMultiple = {
     a: {
         text: "Te subes al auto y luego de arrancar prenden la musica nuevamente. Luego de un largo camino llegan a una enorme casa a las afueras de un pueblo, cuando estan por estacionar el conductor dice: -Bli med oss i huset vårt, du er invitert til å spise.",
         options: optionsAB,
@@ -60,5 +63,5 @@ const cap = {
             }
         ],
     },
-}
-export default cap
+};
+export default cap;

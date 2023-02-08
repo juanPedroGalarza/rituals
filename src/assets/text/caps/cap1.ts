@@ -1,4 +1,6 @@
-const cap = {
+import { CapMultiple } from "../caps";
+
+const cap: CapMultiple = {
     a: {
         text: "El auto se acerca y ve tu seña, cuando frena ves que es un grupo de turistas con musica un poco extraña con el volumen satudaro por lo que no vas a entender bien lo que dice. Apagan la muscia y te dicen -Vil du at vi skal ta deg til nærmeste by?",
         options: [
@@ -68,5 +70,5 @@ const cap = {
             },
         ],
     },
-}
-export default cap
+};
+export default cap;

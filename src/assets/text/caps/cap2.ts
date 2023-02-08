@@ -1,4 +1,6 @@
-const cap = {
+import { CapMultiple } from "../caps";
+
+const cap: CapMultiple = {
     a: {
         text: 'El conductor mira hacia atras y un pasajero te dice: "Lo que quiere decir es que si quieres que te llevemos al pueblo mas cercano"',
         options: [
@@ -8,7 +10,8 @@ const cap = {
             },
             {
                 text: '"no gracias, prefiero quedarme"',
-                selection: "d",cap:3}
+                selection: "d", cap: 3
+            }
         ],
     },
     b: {
@@ -61,5 +64,5 @@ const cap = {
             },
         ],
     },
-}
-export default cap
+};
+export default cap;

@@ -1,4 +1,6 @@
-let optionsAB = [
+import { CapMultiple, OptionCap } from "../caps";
+
+let optionsAB: Array<OptionCap> = [
     {
         text: 'mirar por la cerradura',
         selection: "a", cap: 6
@@ -7,10 +9,10 @@ let optionsAB = [
         text: 'salir a ver que sucede',
         selection: "x", cap: 7
     }
-]
+];
 
 
-const cap = {
+const cap: CapMultiple = {
     a: {
         text: 'Al no escuchar nada se va y te deja que sigas en el baño. Pasa el tiempo mientras vas recuperando la compostura. Escuchas un ruido raro en el comedor, como si estubieran moviendo muebles.',
         options: optionsAB,
@@ -77,5 +79,5 @@ const cap = {
             },
         ],
     },
-}
-export default cap
+};
+export default cap;

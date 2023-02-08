@@ -1,4 +1,6 @@
-const cap = {
+import { CapMultiple } from "../caps";
+
+const cap: CapMultiple = {
     a: {
         text: 'En silencio te pones a atar la ropa entre si para formar una soga larga, atas un extremo en la canilla y el otro lo tiras por la ventanilla. Mientras bajas escuchas que se abre la puerta del baño e inmediatamente se desata la soga hecha de ropa y caes contra el suelo, por suerte estabas lo suficientemente bajo y la caida solo te saco todo el aire.',
         options: [
@@ -77,5 +79,5 @@ const cap = {
             }
         ]
     }
-}
-export default cap
+};
+export default cap;

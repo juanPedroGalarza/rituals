@@ -1,4 +1,6 @@
-const optionsAB = [
+import { CapMultiple, OptionCap } from "../caps";
+
+const optionsAB: Array<OptionCap> = [
     {
         text: '"gracias Pepe"',
         selection: "b", cap: 11,
@@ -14,8 +16,9 @@ const optionsAB = [
         selection: "a", cap: 11,
         condition: "MUTED"
     }
-]
-const cap = {
+];
+
+const cap: CapMultiple = {
     a: {
         text: '"Se ve que fue demasiado si nisiquiera puedes decirme nada" Luego de un largo viaje llegan a tu casa, estas por vajarte para ir a buscar el dinero cuando te dice: "No tienes porque pagarme es suficiente con haberte ayudado :)"',
         options: optionsAB
@@ -65,5 +68,5 @@ const cap = {
             }
         ]
     }
-}
-export default cap
+};
+export default cap;
