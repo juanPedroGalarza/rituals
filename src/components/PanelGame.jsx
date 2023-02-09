@@ -12,7 +12,7 @@ export default function PanelGame() {
     const finalText = "¿Quieres volver a jugar?"
     const navigate = useNavigate()
     const [smile,setSmile] = useState(false)
-    const [text, setText] = useState(selected?.text)
+    const [text, setText] = useState("")
 
     const toDoSelected = (action) => {
         switch (action) {
@@ -43,8 +43,9 @@ export default function PanelGame() {
 
     const next = () => {
         dispatch(emptyText())
+        setText("")
         setTimeout(() => {
-            if (optSelected.cap) {
+            if (optSelected.cap > 0) {
                 optSelected.action && toDoSelected(optSelected.action)
                 dispatch(nextCap(optSelected))
             } else {
@@ -55,6 +56,7 @@ export default function PanelGame() {
     }
     const playAgain = () => {
         dispatch(emptyText())
+        setText("")
         setTimeout(() => {
             dispatch(reset())
         },500)
@@ -70,24 +72,12 @@ export default function PanelGame() {
     return (
         <div className="panel-container">
             <div className="panel-text">
-                {selected ?
-                    <WriteText interval={50}
-                    >{text}</WriteText> : null}
-                {isFinal ? <WriteText interval={50}>{finalText}</WriteText> : null}
+                {!isFinal ? text ?
+                    <WriteText interval={50} >{text}</WriteText>
+                    : null
+                    : <WriteText interval={50}>{finalText}</WriteText>}
             </div>
-            {isWrited && selected ?
-                <form className="panel-form">
-                    <div className="panel-options">
-                        {selected.options?.map((o, i) => <OptionCap key={i} option={o} />)}
-                    </div>
-                    <button
-                        type="button"
-                        className={`panel-submit ${optSelected ? "" : "chose"}`}
-                        onClick={optSelected ? next : null}>
-                        {optSelected ? "Continuar" : "Elige"}</button>
-                </form>
-                : null}
-            {isWrited && isFinal ?
+            {isWrited?  isFinal ?
                 <>
                     <button
                         type="button"
@@ -100,8 +90,18 @@ export default function PanelGame() {
                         onClick={()=>navigate("/")}
                     >NO</button>
                 </>
+                : <form className="panel-form">
+                <div className="panel-options">
+                    {selected.options?.map((o, i) => <OptionCap key={i} option={o} />)}
+                </div>
+                <button
+                    type="button"
+                    className={`panel-submit ${optSelected ? "" : "chose"}`}
+                    onClick={optSelected ? next : null}>
+                    {optSelected ? "Continuar" : "Elige"}</button>
+                </form>
                 : null
             }
         </div>
     )
-}
+};

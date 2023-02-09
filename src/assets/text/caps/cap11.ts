@@ -2,7 +2,8 @@ import { CapMultiple, OptionCap } from "../caps";
 
 const option: OptionCap = {
     text: 'FIN',
-    selection: "a", cap: null
+    selection: "a",
+    cap: 0
 };
 
 const cap: CapMultiple = {

@@ -14,7 +14,7 @@ import cap11 from "./caps/cap11";
 export interface OptionCap{
     text: string,
     selection: string,
-    cap: number | null,
+    cap: number,
     action?: "NO_MUTED" | "IS_MUTED" | "HAPPY" | "SAD" | "HAPPY_END" | "SAD_END",
     condition?: "MUTED" | "NO_MUTED" | "EXCLUSIVE_NO_MUTED"
 };
@@ -27,7 +27,7 @@ export interface CapMultiple {
     [key: string]: CapInterface
 };
 
-const caps: Array<CapInterface | CapMultiple> = [
+const caps: Array<CapMultiple> = [
     cap0,
     cap1,
     cap2,

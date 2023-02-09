@@ -1,6 +1,7 @@
-import { CapInterface } from "../caps";
+import { CapMultiple } from "../caps";
 
-const cap: CapInterface = {
+const cap: CapMultiple = {
+    a:{
     text: "Estas en medio de la carretera y se acerca un auto, hay varias opciones para hacer:",
     options: [
         {
@@ -28,5 +29,5 @@ const cap: CapInterface = {
             selection: "f", cap: 11
         },
     ],
-};
+}};
 export default cap;
