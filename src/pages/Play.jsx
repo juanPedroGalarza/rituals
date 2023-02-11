@@ -1,9 +1,11 @@
-import PanelGame from "../components/PanelGame"
+import PanelGame from "../components/PanelGame";
+import MainStyled from "../components/styled/MainStyled";
+
 export default function Play() {
     
     return (
-        <main className="main">
+        <MainStyled>
             <PanelGame />
-        </main>
-    )
-}
+        </MainStyled>
+    );
+};
