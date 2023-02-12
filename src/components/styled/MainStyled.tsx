@@ -9,7 +9,7 @@ const MainParent = styled(Box)(({ theme }) => ({
     alignItems: "center",
     flexDirection: "column",
     width: "100%",
-    minHeight: "100vh",
+    minHeight: "87vh",
     gap: "10px",
   }
 }));
@@ -19,7 +19,7 @@ export default function MainStyled
 {
   return (
     <MainParent {...props.mainParentProps}>
-      <Container {...props}>
+      <Container maxWidth="xl" {...props}>
       {props.children}
       </Container>
     </MainParent>
