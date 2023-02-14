@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction, SliceCaseReducers } from '@reduxjs/toolkit';
-import caps, { CapInterface, OptionCap } from "../../assets/text/caps";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import caps, { CapInterface, CapMultiple, OptionCap } from "../../assets/text/caps";
 
 export interface UserState {
     selected: CapInterface,
     isWrited: boolean,
-    optSelected: string | null,
+    optSelected: OptionCap,
     isFinal: boolean,
     isMuted: "" | "YES" | "NO",
     smily: number,
@@ -12,33 +12,38 @@ export interface UserState {
 };
 
 
+const optDefault: OptionCap = {
+    text: "",
+    selection: "",
+    cap: 0
+};
 
-export const userSlice = createSlice
-    <UserState, SliceCaseReducers<UserState>, 'game'>
-    ({
+export const userSlice = createSlice({
     name: 'game',
     initialState: {
         selected: caps[0].a,
         isWrited: false,
-        optSelected: null,
+        optSelected: optDefault,
         isFinal: false,
         isMuted: "",
         smily: 0,
         feeling: ""
-    },
+    } as UserState,
     reducers: {
         reset: (state) => {
             state.selected = caps[0].a
             state.isWrited = false
-            state.optSelected = null
+            state.optSelected = optDefault
             state.isFinal = false
             state.isMuted = ""
             state.smily = 0
         },
-        nextCap: (state,action: PayloadAction<OptionCap>) => {
-            let cap = caps[action.payload.cap]
-            state.selected = cap[action.payload.selection]
-            state.optSelected = null
+        nextCap: (state) => {
+            let opCap = state.optSelected.cap
+            let opSel = state.optSelected.selection
+            let cap: CapMultiple = caps[opCap]
+            state.selected = cap[opSel]
+            state.optSelected = optDefault
             state.isWrited = false
         },
         stopWriting: (state) => {
@@ -47,7 +52,7 @@ export const userSlice = createSlice
         startWriting: (state) => {
             state.isWrited = false
         },
-        selectOpt: (state, action: PayloadAction<string>) => {
+        selectOpt: (state, action: PayloadAction<OptionCap>) => {
             state.optSelected = action.payload
         },
         emptyText: (state) => {
@@ -56,19 +61,19 @@ export const userSlice = createSlice
         setFinal: (state) => {
             state.isFinal = true
         },
-        setMuted: (state,action: PayloadAction<"YES" | "NO">)=>{
+        setMuted: (state, action: PayloadAction<"YES" | "NO">) => {
             state.isMuted = action.payload
         },
         setSmily: (state, action: PayloadAction<number>) => {
             state.smily = + action.payload
-            if (state.smily > 0) {    
+            if (state.smily > 0) {
                 state.feeling = ":)"
             } else {
                 state.feeling = ":("
             }
         }
     },
-})
+});
 export const {
     reset,
     nextCap,

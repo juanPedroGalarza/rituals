@@ -1,15 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import gameReducer from "./game/gameSlice";
-import themeReducer from "./theme/themeSlice";
+import gameReducer, { UserState } from "./game/gameSlice";
+import themeReducer, { ThemeState } from "./theme/themeSlice";
 
-export const store  = configureStore({
+export interface StoreInterface {
+    game: UserState,
+    theme: ThemeState
+};
+
+export const store  = configureStore<StoreInterface>({
     reducer: {
         game: gameReducer,
         theme: themeReducer
-    },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        inmutableCheck: false,
-        serializableCheck: false,
-    }),
+    }
 });
 
