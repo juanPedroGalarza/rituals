@@ -8,7 +8,8 @@ export interface UserState {
     isFinal: boolean,
     isMuted: "" | "YES" | "NO",
     smily: number,
-    feeling: "" | ":)" | ":("
+    feeling: "" | ":)" | ":(",
+    smileEnd: boolean
 };
 
 
@@ -18,29 +19,25 @@ const optDefault: OptionCap = {
     cap: 0
 };
 
+const initialState: UserState = {
+    selected: caps[0].a,
+    isWrited: false,
+    optSelected: optDefault,
+    isFinal: false,
+    isMuted: "",
+    smily: 0,
+    feeling: "",
+    smileEnd: false
+}
+
 export const userSlice = createSlice({
     name: 'game',
-    initialState: {
-        selected: caps[0].a,
-        isWrited: false,
-        optSelected: optDefault,
-        isFinal: false,
-        isMuted: "",
-        smily: 0,
-        feeling: ""
-    } as UserState,
+    initialState,
     reducers: {
-        reset: (state) => {
-            state.selected = caps[0].a
-            state.isWrited = false
-            state.optSelected = optDefault
-            state.isFinal = false
-            state.isMuted = ""
-            state.smily = 0
-        },
-        nextCap: (state) => {
-            let opCap = state.optSelected.cap
-            let opSel = state.optSelected.selection
+        reset: () => initialState,
+        nextCap: (state, action: PayloadAction<OptionCap>) => {
+            let opCap = action.payload.cap
+            let opSel = action.payload.selection
             let cap: CapMultiple = caps[opCap]
             state.selected = cap[opSel]
             state.optSelected = optDefault
@@ -71,7 +68,10 @@ export const userSlice = createSlice({
             } else {
                 state.feeling = ":("
             }
-        }
+        },
+        setSmileEnd: (state) => {
+            state.smileEnd = true
+        },
     },
 });
 export const {
@@ -83,6 +83,8 @@ export const {
     emptyText,
     setFinal,
     setMuted,
-    setSmily } = userSlice.actions;
+    setSmily,
+    setSmileEnd
+} = userSlice.actions;
 
 export default userSlice.reducer;
