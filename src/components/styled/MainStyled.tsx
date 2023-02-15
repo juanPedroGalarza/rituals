@@ -3,7 +3,7 @@ import {Container, styled, Box, BoxProps, ContainerProps} from "@mui/material"
 const MainParent = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary,
   backgroundColor: theme.palette.background.default,
-  "& .MuiContainer-root": {
+  "& > .MuiContainer-root": {
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
