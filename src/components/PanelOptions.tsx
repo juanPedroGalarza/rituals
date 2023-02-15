@@ -3,58 +3,54 @@ import { useNavigate } from "react-router-dom"
 import OptionCapButton from "./OptionCapButton"
 import {
   nextCap,
-  emptyText,
   setFinal,
   reset,
   setMuted,
   setSmily,
   UserState,
-  setSmileEnd,
-  selectOpt
-} from "../features/game/gameSlice"
-import { StoreInterface } from "../features/store"
-import { Box } from "@mui/system"
-import { Button, ToggleButtonGroup } from "@mui/material"
-import React, { useState } from "react"
-import { OptionCap } from "../assets/text/caps"
+  setSmileEnd
+} from "../features/game/gameSlice";
+import { StoreInterface } from "../features/store";
+import { Box } from "@mui/system";
+import { Button } from "@mui/material";
+import { useState } from "react";
 
 export default function PanelOptions() {
 
   const { isWrited, isFinal, selected, optSelected }
-    = useSelector<StoreInterface, UserState>((state) => state.game)
-  const [isSelected,setIsSelected] = useState<boolean>(false)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+    = useSelector<StoreInterface, UserState>((state) => state.game);
+  const [isSelected, setIsSelected] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   
-    const toDoSelected = (action:string) => {
-      switch (action) {
-          case "IS_MUTED":
-              dispatch(setMuted("YES"))
-              break;
-          case "NO_MUTED":
-              dispatch(setMuted("NO"))
-              break;
-          case "HAPPY":
-              dispatch(setSmily(1))
-              break;
-          case "SAD":
-              dispatch(setSmily(-1))
-              break;
-          case "HAPPY_END":
-              dispatch(setSmily(1))
-              dispatch(setSmileEnd())
-              break;
-          case "SAD_END":
-              dispatch(setSmily(-1))
-              dispatch(setSmileEnd())
-              break;
-          default:
-              break;
-      }
-  }
+  const toDoSelected = (action: string) => {
+    switch (action) {
+      case "IS_MUTED":
+        dispatch(setMuted("YES"));
+        break;
+      case "NO_MUTED":
+        dispatch(setMuted("NO"));
+        break;
+      case "HAPPY":
+        dispatch(setSmily(1));
+        break;
+      case "SAD":
+        dispatch(setSmily(-1));
+        break;
+      case "HAPPY_END":
+        dispatch(setSmily(1));
+        dispatch(setSmileEnd());
+        break;
+      case "SAD_END":
+        dispatch(setSmily(-1));
+        dispatch(setSmileEnd());
+        break;
+      default:
+        break;
+    };
+  };
 
   const next = () => {
-    dispatch(emptyText());
     setIsSelected(false);
     setTimeout(() => {
       if (optSelected.cap > 0) {
@@ -66,7 +62,6 @@ export default function PanelOptions() {
     }, 1000);
   };
   const playAgain = () => {
-    dispatch(emptyText());
     setTimeout(() => {
       dispatch(reset());
     }, 1000);

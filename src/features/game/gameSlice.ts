@@ -52,9 +52,6 @@ export const userSlice = createSlice({
         selectOpt: (state, action: PayloadAction<OptionCap>) => {
             state.optSelected = action.payload
         },
-        emptyText: (state) => {
-            state.isWrited = false
-        },
         setFinal: (state) => {
             state.isFinal = true
         },
@@ -80,7 +77,6 @@ export const {
     stopWriting,
     startWriting,
     selectOpt,
-    emptyText,
     setFinal,
     setMuted,
     setSmily,
