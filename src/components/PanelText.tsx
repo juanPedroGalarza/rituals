@@ -1,7 +1,5 @@
 import WriteText from "./WriteText";
 import { useSelector } from "react-redux";
-import "../styles/Play.css";
-import PanelOptions from "./PanelOptions";
 import { useState, useEffect } from "react";
 import { UserState } from "../features/game/gameSlice";
 import { StoreInterface } from "../features/store";
@@ -26,14 +24,11 @@ export default function PanelGame() {
   }, [smileEnd]);
   
   return (
-    <div className="panel-container">
-      <div className="panel-text">
-        {!isFinal ? text ?
-          <WriteText interval={50} >{text}</WriteText>
-          : null
-          : <WriteText interval={50}>{finalText}</WriteText>}
-      </div>
-      <PanelOptions />
+    <div className="panel-text">
+      {!isFinal ? text ?
+        <WriteText interval={50} >{text}</WriteText>
+        : null
+        : <WriteText interval={50}>{finalText}</WriteText>}
     </div>
   );
 };
