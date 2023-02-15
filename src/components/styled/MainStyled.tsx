@@ -15,7 +15,7 @@ const MainParent = styled(Box)(({ theme }) => ({
 }));
 
 export default function MainStyled
-  (props: ContainerProps & { mainParentProps: BoxProps }): JSX.Element
+  (props: ContainerProps & { mainParentProps?: BoxProps }): JSX.Element
 {
   return (
     <MainParent {...props.mainParentProps}>
