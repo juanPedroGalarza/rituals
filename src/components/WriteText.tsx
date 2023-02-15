@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { startWriting, stopWriting } from "../features/game/gameSlice";
+import Typography from '@mui/material/Typography';
 
 interface MyProps {
   children: string,
   interval: number
-}
+};
 
 export default function WriteText(props:MyProps) {
   const [count, setCount] = useState<number>(1);
@@ -35,6 +36,8 @@ export default function WriteText(props:MyProps) {
     };
   }, [props.interval, count, dispatch, text.length]);
   return (
-    <p>{text?.slice(0, count)}</p>
+    <Typography variant="subtitle1" >
+      {text.slice(0, count)}
+    </Typography>
   );
 };
