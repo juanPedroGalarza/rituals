@@ -11,10 +11,22 @@ const PanelContainer = styled(Container)(({ theme }) => ({
   padding: "2vmax",
   "& .MuiPaper-root.panel-text": {
     width: "100%",
-    borderRadius: 10,
-    border: `3px solid ${theme.palette.text.primary}`,
     padding: "2rem",
-    minHeight: 200,
+    minHeight: "15vh",
+  },
+  "& > .MuiBox-root.panel-options": {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "1rem",
+    "& .panel-options-list": {
+      display: "flex",
+      width: "100%",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-evenly",
+    }
   }
 }));
 

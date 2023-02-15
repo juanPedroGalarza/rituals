@@ -9,15 +9,20 @@ import {
   setMuted,
   setSmily,
   UserState,
-  setSmileEnd
+  setSmileEnd,
+  selectOpt
 } from "../features/game/gameSlice"
 import { StoreInterface } from "../features/store"
+import { Box } from "@mui/system"
+import { Button, ToggleButtonGroup } from "@mui/material"
+import React, { useState } from "react"
+import { OptionCap } from "../assets/text/caps"
 
 export default function PanelOptions() {
 
   const { isWrited, isFinal, selected, optSelected }
     = useSelector<StoreInterface, UserState>((state) => state.game)
-  
+  const [isSelected,setIsSelected] = useState<boolean>(false)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   
@@ -49,51 +54,60 @@ export default function PanelOptions() {
   }
 
   const next = () => {
-      dispatch(emptyText())
-      setTimeout(() => {
-          if (optSelected.cap > 0) {
-              optSelected.action && toDoSelected(optSelected.action)
-              dispatch(nextCap(optSelected))
-          } else {
-              dispatch(setFinal())
-          }
-      },500)
-  }
+    dispatch(emptyText());
+    setIsSelected(false);
+    setTimeout(() => {
+      if (optSelected.cap > 0) {
+        optSelected.action && toDoSelected(optSelected.action);
+        dispatch(nextCap(optSelected));
+      } else {
+        dispatch(setFinal());
+      };
+    }, 1000);
+  };
   const playAgain = () => {
-      dispatch(emptyText())
-      setTimeout(() => {
-          dispatch(reset())
-      },500)
-  }
+    dispatch(emptyText());
+    setTimeout(() => {
+      dispatch(reset());
+    }, 1000);
+  };
+
+
+  function finalOptions() {
+    return (
+      <>
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={playAgain}
+        >SI</Button>
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={() => navigate("/")}
+        >NO</Button>
+      </>
+    );
+  };
 
   return (
-    <>
-      {isWrited ? isFinal ?
-        <>
-          <button
-            type="button"
-            className="panel-submit"
-            onClick={playAgain}
-          >SI</button>
-          <button
-            type="button"
-            className="panel-submit"
-            onClick={() => navigate("/")}
-          >NO</button>
-        </>
-        : <form className="panel-form">
-          <div className="panel-options">
-            {selected.options.map((o, i) =>
-              <OptionCapButton key={i} option={o} />)}
-          </div>
-          <button
-            type="button"
-            className={`panel-submit ${optSelected ? "" : "chose"}`}
-            onClick={optSelected ? next : undefined}>
-            {optSelected ? "Continuar" : "Elige"}</button>
-        </form>
+    <Box className="panel-options">
+      {isWrited ?
+        isFinal ?
+          finalOptions()
+          :
+          <>
+            <OptionCapButton options={selected.options} select={(v:boolean)=>setIsSelected(v)} />
+            <Button
+              type="button"
+              variant="contained"
+              color="primary"
+              disabled={!isSelected}
+              onClick={isSelected ? next : undefined}>
+              {isSelected ? "Continuar" : "Elige"}</Button>
+          </>
         : null
       }
-    </>
+    </Box>
   );
-}
+};
