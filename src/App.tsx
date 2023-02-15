@@ -1,22 +1,29 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainLayout from "./layouts/MainLayout"
+import MainLayout from "./layouts/MainLayout";
 import Home from './pages/Home';
 import Play from './pages/Play';
 import Help from './pages/Help';
 import { useSelector } from 'react-redux';
-import darkTheme from "./features/theme/darkTheme"
-import lightTheme from "./features/theme/lightTheme"
-import { ThemeProvider } from '@mui/material';
+import darkTheme from "./features/theme/darkTheme";
+import lightTheme from "./features/theme/lightTheme";
+import { Theme, ThemeProvider } from '@mui/material';
+import { StoreInterface } from './features/store';
+import { ThemeState } from './features/theme/themeSlice';
 
-const themes = {
+type Themes = {
+  [K: string]: Theme
+};
+
+const themes: Themes = {
   dark: darkTheme,
   light: lightTheme,
-}
+};
 
 function App() {
 
-  const {themeName} = useSelector(state=>state.theme)
+  const { themeName } =
+    useSelector<StoreInterface, ThemeState>(state => state.theme);
 
   return (
     <ThemeProvider theme={themes[themeName]}>
@@ -32,6 +39,6 @@ function App() {
       </BrowserRouter>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
