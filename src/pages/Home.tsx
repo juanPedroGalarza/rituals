@@ -14,7 +14,7 @@ export default function Home() {
         width: "100%",
         maxWidth: 600,
       }}>
-        <WriteText interval={100}>{text.description}</WriteText>
+        <WriteText interval={40}>{text.description}</WriteText>
       </Box>
       <Button
         variant="contained"

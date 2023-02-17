@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
-import OptionCapButton from "./OptionCapButton"
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import OptionCapButton from "./OptionCapButton";
 import {
   nextCap,
   setFinal,
@@ -8,16 +8,17 @@ import {
   setMuted,
   setSmily,
   UserState,
-  setSmileEnd
+  setSmileEnd,
+  setWritable
 } from "../features/game/gameSlice";
 import { StoreInterface } from "../features/store";
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export default function PanelOptions() {
 
-  const { isWrited, isFinal, selected, optSelected }
+  const { isFinal, selected, optSelected }
     = useSelector<StoreInterface, UserState>((state) => state.game);
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const dispatch = useDispatch();
@@ -52,20 +53,23 @@ export default function PanelOptions() {
 
   const next = () => {
     setIsSelected(false);
-    setTimeout(() => {
-      if (optSelected.cap > 0) {
-        optSelected.action && toDoSelected(optSelected.action);
-        dispatch(nextCap(optSelected));
-      } else {
-        dispatch(setFinal());
-      };
-    }, 1000);
+    dispatch(setWritable(false));
+    if (optSelected.cap > 0) {
+      optSelected.action && toDoSelected(optSelected.action);
+      dispatch(nextCap(optSelected));
+    } else {
+      dispatch(setFinal());
+    };
+    setTimeout((): void => {
+      dispatch(setWritable(true));
+    }, 500);
   };
-  const playAgain = () => {
-    setTimeout(() => {
-      dispatch(reset());
-    }, 1000);
-  };
+  const playAgain = useCallback(() => {
+    dispatch(reset());
+    setTimeout((): void => {
+      dispatch(setWritable(true));
+    }, 500);
+  }, []);
 
 
   function finalOptions() {
@@ -87,21 +91,19 @@ export default function PanelOptions() {
 
   return (
     <Box className="panel-options">
-      {isWrited ?
-        isFinal ?
-          finalOptions()
-          :
-          <>
-            <OptionCapButton options={selected.options} select={(v:boolean)=>setIsSelected(v)} />
-            <Button
-              type="button"
-              variant="contained"
-              color="primary"
-              disabled={!isSelected}
-              onClick={isSelected ? next : undefined}>
-              {isSelected ? "Continuar" : "Elige"}</Button>
-          </>
-        : null
+      {isFinal ?
+        finalOptions()
+        :
+        <>
+          <OptionCapButton options={selected.options} select={(v: boolean) => setIsSelected(v)} />
+          <Button
+            type="button"
+            variant="contained"
+            color="primary"
+            disabled={!isSelected}
+            onClick={isSelected ? next : undefined}>
+            {isSelected ? "Continuar" : "Elige"}</Button>
+        </>
       }
     </Box>
   );

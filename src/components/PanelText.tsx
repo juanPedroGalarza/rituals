@@ -18,15 +18,20 @@ export default function PanelGame() {
 
 
   useEffect(() => {
-    selected ? setText(selected.text) : setText("");
-  }, [selected]);
-  useEffect(() => {
-    smileEnd && smily !== 0 && setText(t => t + feeling)
-  }, [smileEnd]);
+    setText("");
+    setTimeout(() => {
+      setText(
+        isFinal ?
+          finalText
+          : smileEnd && smily !== 0 ?
+            selected.text + feeling
+            : selected.text);
+    }, 50);
+  }, [selected.text, smileEnd, finalText, smily, feeling, isFinal]);
   
   return (
     <Paper className="panel-text" elevation={0}>
-      <WriteText interval={50} >{isFinal?finalText:text}</WriteText>
+      <WriteText interval={25} forGame >{ text }</WriteText>
     </Paper>
   );
 };

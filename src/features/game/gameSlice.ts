@@ -9,7 +9,8 @@ export interface UserState {
     isMuted: "" | "YES" | "NO",
     smily: number,
     feeling: "" | ":)" | ":(",
-    smileEnd: boolean
+    smileEnd: boolean,
+    writable: boolean,
 };
 
 
@@ -27,27 +28,27 @@ const initialState: UserState = {
     isMuted: "",
     smily: 0,
     feeling: "",
-    smileEnd: false
-}
+    smileEnd: false,
+    writable: true,
+};
 
 export const userSlice = createSlice({
     name: 'game',
     initialState,
     reducers: {
-        reset: () => initialState,
+        reset: () => ({ ...initialState, writable: false }),
         nextCap: (state, action: PayloadAction<OptionCap>) => {
             let opCap = action.payload.cap
             let opSel = action.payload.selection
             let cap: CapMultiple = caps[opCap]
             state.selected = cap[opSel]
             state.optSelected = optDefault
-            state.isWrited = false
         },
-        stopWriting: (state) => {
-            state.isWrited = true
+        setWrited: (state, action: PayloadAction<boolean>) => {
+            state.isWrited = action.payload
         },
-        startWriting: (state) => {
-            state.isWrited = false
+        setWritable: (state, action: PayloadAction<boolean>) => {
+            state.writable = action.payload
         },
         selectOpt: (state, action: PayloadAction<OptionCap>) => {
             state.optSelected = action.payload
@@ -74,8 +75,8 @@ export const userSlice = createSlice({
 export const {
     reset,
     nextCap,
-    stopWriting,
-    startWriting,
+    setWrited,
+    setWritable,
     selectOpt,
     setFinal,
     setMuted,

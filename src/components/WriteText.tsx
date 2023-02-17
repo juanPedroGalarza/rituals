@@ -1,35 +1,41 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { startWriting, stopWriting } from "../features/game/gameSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setWrited, UserState } from "../features/game/gameSlice";
 import Typography from '@mui/material/Typography';
+import { StoreInterface } from "../features/store";
 
 interface MyProps {
   children: string,
-  interval: number
+  interval: number,
+  forGame?: boolean
 };
 
 export default function WriteText(props:MyProps) {
   const [count, setCount] = useState<number>(1);
+  const { writable } =
+    useSelector<StoreInterface, UserState>(state => state.game);
   const [intervalId, setIntervalId] = useState<undefined | NodeJS.Timer>();
   const dispatch = useDispatch();
   const text = props.children;
+  const { forGame } = props;
 
   useEffect(():VoidFunction => {
-    return ():void => clearInterval(intervalId);
+    return (): void => { clearInterval(intervalId) };
   }, [intervalId]);
 
-
-  useEffect(():void => {
-    setCount(0);
-    text && dispatch(startWriting());
+  useEffect((): void => {
+    text && setCount(0);
+    dispatch(setWrited(false));
   }, [text, dispatch]);
+
+
 
   useEffect(():void => {
     if (count >= text.length) {
-      dispatch(stopWriting());
+      forGame && dispatch(setWrited(true));
     } else if (text.length && count < text.length) {
-      dispatch(startWriting());
-      let id = setInterval(() => {
+      forGame && dispatch(setWrited(false));
+      let id: NodeJS.Timer = setInterval(() => {
         setCount(c => c + 1);
       }, props.interval);
       setIntervalId(id);
@@ -37,7 +43,7 @@ export default function WriteText(props:MyProps) {
   }, [props.interval, count, dispatch, text.length]);
   return (
     <Typography variant="subtitle1" >
-      {text.slice(0, count)}
+      {writable || !forGame ? text.slice(0, count) : null}
     </Typography>
   );
 };
