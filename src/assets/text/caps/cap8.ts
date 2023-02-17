@@ -19,15 +19,18 @@ const cap: CapMultiple = {
         options: [
             {
                 text: "Rojo",
-                selection: "e", cap: 10
+                selection: "e", cap: 10,
+                action: "RED"
             },
             {
                 text: "Rojo",
-                selection: "e", cap: 10
+                selection: "e", cap: 10,
+                action: "RED"
             },
             {
                 text: "Rojo",
-                selection: "e", cap: 10
+                selection: "e", cap: 10,
+                action: "RED"
             }
         ]
     },

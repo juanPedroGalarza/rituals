@@ -11,6 +11,7 @@ export interface UserState {
     feeling: "" | ":)" | ":(",
     smileEnd: boolean,
     writable: boolean,
+    isRed: boolean
 };
 
 
@@ -30,6 +31,7 @@ const initialState: UserState = {
     feeling: "",
     smileEnd: false,
     writable: true,
+    isRed: false
 };
 
 export const userSlice = createSlice({
@@ -70,6 +72,9 @@ export const userSlice = createSlice({
         setSmileEnd: (state) => {
             state.smileEnd = true
         },
+        setRed: (state) => {
+            state.isRed = true
+        },
     },
 });
 export const {
@@ -81,7 +86,8 @@ export const {
     setFinal,
     setMuted,
     setSmily,
-    setSmileEnd
+    setSmileEnd,
+    setRed
 } = userSlice.actions;
 
 export default userSlice.reducer;

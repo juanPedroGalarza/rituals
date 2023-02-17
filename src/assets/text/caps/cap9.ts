@@ -2,7 +2,8 @@ import { CapMultiple, OptionCap } from "../caps";
 
 const optionFly: OptionCap = {
     text: "Volar",
-    selection: "e", cap: 10
+    selection: "e", cap: 10,
+    action: "RED"
 };
 
 const cap: CapMultiple = {
@@ -25,15 +26,18 @@ const cap: CapMultiple = {
         options: [
             {
                 text: "Rojo",
-                selection: "e", cap: 10
+                selection: "e", cap: 10,
+                action: "RED"
             },
             {
                 text: "Rojo",
-                selection: "e", cap: 10
+                selection: "e", cap: 10,
+                action: "RED"
             },
             {
                 text: "Rojo",
-                selection: "e", cap: 10
+                selection: "e", cap: 10,
+                action: "RED"
             }
         ]
     },

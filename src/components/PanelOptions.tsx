@@ -9,7 +9,8 @@ import {
   setSmily,
   UserState,
   setSmileEnd,
-  setWritable
+  setWritable,
+  setRed
 } from "../features/game/gameSlice";
 import { StoreInterface } from "../features/store";
 import { Box } from "@mui/system";
@@ -18,7 +19,7 @@ import { useCallback, useState } from "react";
 
 export default function PanelOptions() {
 
-  const { isFinal, selected, optSelected }
+  const { isFinal, selected, optSelected, isRed }
     = useSelector<StoreInterface, UserState>((state) => state.game);
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const dispatch = useDispatch();
@@ -45,6 +46,9 @@ export default function PanelOptions() {
       case "SAD_END":
         dispatch(setSmily(-1));
         dispatch(setSmileEnd());
+        break;
+      case "RED":
+        dispatch(setRed());
         break;
       default:
         break;
@@ -76,12 +80,12 @@ export default function PanelOptions() {
     return (
       <>
         <Button
-          color="primary"
+          color={isRed?"secondary":"primary"}
           variant="contained"
           onClick={playAgain}
         >SI</Button>
         <Button
-          color="primary"
+          color={isRed?"secondary":"primary"}
           variant="contained"
           onClick={() => navigate("/")}
         >NO</Button>
@@ -99,7 +103,7 @@ export default function PanelOptions() {
           <Button
             type="button"
             variant="contained"
-            color="primary"
+            color={isRed?"secondary":"primary"}
             disabled={!isSelected}
             onClick={isSelected ? next : undefined}>
             {isSelected ? "Continuar" : "Elige"}</Button>

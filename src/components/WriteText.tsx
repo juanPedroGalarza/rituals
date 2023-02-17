@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setWrited, UserState } from "../features/game/gameSlice";
 import Typography from '@mui/material/Typography';
 import { StoreInterface } from "../features/store";
+import { red } from "@mui/material/colors";
 
 interface MyProps {
   children: string,
@@ -12,7 +13,7 @@ interface MyProps {
 
 export default function WriteText(props:MyProps) {
   const [count, setCount] = useState<number>(1);
-  const { writable } =
+  const { writable, isRed } =
     useSelector<StoreInterface, UserState>(state => state.game);
   const [intervalId, setIntervalId] = useState<undefined | NodeJS.Timer>();
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ export default function WriteText(props:MyProps) {
     };
   }, [props.interval, count, dispatch, text.length]);
   return (
-    <Typography variant="subtitle1" >
+    <Typography variant="subtitle1" color={isRed? red[500]:"inherit"}>
       {writable || !forGame ? text.slice(0, count) : null}
     </Typography>
   );

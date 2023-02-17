@@ -15,7 +15,7 @@ export interface OptionCap{
     text: string,
     selection: string,
     cap: number,
-    action?: "NO_MUTED" | "IS_MUTED" | "HAPPY" | "SAD" | "HAPPY_END" | "SAD_END",
+    action?: "NO_MUTED" | "IS_MUTED" | "HAPPY" | "SAD" | "HAPPY_END" | "SAD_END" | "RED",
     condition?: "MUTED" | "NO_MUTED" | "EXCLUSIVE_MUTED" | "EXCLUSIVE_NO_MUTED"
 };
 export interface CapInterface {

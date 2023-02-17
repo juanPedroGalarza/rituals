@@ -6,15 +6,19 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ButtonGroup, Container, Icon } from "@mui/material";
 import NavStyled from "./styled/NavStyled";
+import { useSelector } from "react-redux";
+import { StoreInterface } from "../features/store";
+import { UserState } from "../features/game/gameSlice";
 
 
 export default function Nav({list}:{list: LinkNav[]}) {
   const [drop, setDrop] = useState<boolean>(false);
   const ToggleEl = useRef(null);
+  const { isRed } = useSelector<StoreInterface,UserState>(state=>state.game);
 
   const printItem = (item: LinkNav) => {
     return (
-      <Button color="primary" variant="text"
+      <Button color={isRed?"secondary":"primary"} variant="text"
         component={Link} to={item.to}
         onClick={() => setDrop(!drop)}
         key={item.title}
@@ -42,11 +46,11 @@ export default function Nav({list}:{list: LinkNav[]}) {
           </Button>
           {drop ?
             <>
-              <ButtonGroup color="primary" variant="contained" >
+              <ButtonGroup color={isRed?"secondary":"primary"} variant="contained" >
                 {list.map(printItem)}
               </ButtonGroup>
               <ButtonGroup
-                color="primary" variant="outlined" orientation="vertical">
+                color={isRed?"secondary":"primary"} variant="outlined" orientation="vertical">
                 {list.map(printItem)}
               </ButtonGroup>
             </> : null}

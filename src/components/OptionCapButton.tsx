@@ -6,7 +6,7 @@ import { StoreInterface } from "../features/store";
 
 export default function OptionCapButton
   ({ options, select }: { options: OptionCap[], select: (v:boolean)=>void }) {
-  const { isMuted, optSelected }
+  const { isMuted, optSelected, isRed }
     = useSelector<StoreInterface, UserState>(state => state.game);
   const dispatch = useDispatch();
 
@@ -24,6 +24,7 @@ export default function OptionCapButton
       value={optSelected}
       onChange={onChangeToggle}
       fullWidth
+      color={isRed?"secondary":"primary"}
       className="panel-options-list"
     >
       {options.map((option, i) => {
@@ -47,7 +48,7 @@ export default function OptionCapButton
           };
           return (
             <ToggleButton
-              color="primary"
+              color={isRed?"secondary":"primary"}
               value={option}
               sx={{ textTransform: "none" }}
               key={i}
