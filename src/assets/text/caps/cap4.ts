@@ -2,27 +2,27 @@ import { CapMultiple, OptionCap } from "../caps";
 
 let optionsAB: Array<OptionCap> = [
     {
-        text: 'asentir con la cabeza',
+        text: 'Asentir con la cabeza',
         selection: "a", cap: 5,
         condition: "MUTED"
     },
     {
-        text: 'negar con la cabeza',
+        text: 'Negar con la cabeza',
         selection: "a", cap: 5,
         condition: "MUTED"
     },
     {
-        text: 'salir del baño',
+        text: 'Salir del baño',
         selection: "x", cap: 7,
         condition: "MUTED"
     },
     {
-        text: '"ya salgo"',
+        text: '"Ya salgo"',
         selection: "x", cap: 7,
         condition: "EXCLUSIVE_NO_MUTED"
     },
     {
-        text: '"aun no termino"',
+        text: '"Aún no termino"',
         selection: "b", cap: 5,
         condition: "EXCLUSIVE_NO_MUTED"
     }
@@ -45,39 +45,39 @@ const optionsDE: Array<OptionCap> = [
 
 const cap: CapMultiple = {
     a: {
-        text: 'Luego de terminar la comida, sientes un dolor de estomago inmenso, te diriges a uno de los baños a largar todo. Al finalizar, el dolor sigue igual, alguien golpea la puerta: -Er du ok?',
+        text: 'Luego de terminar la comida, sientes un dolor de estómago inmenso, te diriges a uno de los baños a largar todo. Al finalizar, el dolor sigue igual, alguien golpea la puerta: -Er du ok?',
         options: optionsAB,
     },
     b: {
-        text: 'Luego de terminar la comida, sientes un dolor de estomago inmenso y te diriges a uno de los baños a largar todo. Al finalizar, el dolor sigue pero no hay mas, alguien golpea la puerta: -¿Te falta mucho?',
+        text: 'Luego de terminar la comida, sientes un dolor de estómago inmenso y te diriges a uno de los baños. Al finalizar, el dolor sigue pero no hay más para expulsar, alguien golpea la puerta: -¿Te falta mucho?',
         options: optionsAB,
     },
     c: {
-        text: "Mientras caminas por el pueblo en busca de algun medio par ir a tu casa ves a lo lejos un taxi conocido. Es Pepe, tu amigo de la infancia que al parecer llego a este pueblo pero no sabes por que.",
+        text: "Mientras caminas por el pueblo en busca de algún medio para ir a tu casa ves a lo lejos un taxi conocido. Es Pepe, tu amigo de la infancia que al parecer llegó a este pueblo pero no sabes por qué.",
         options: [
             {
-                text: "ir a saludarlo",
+                text: "Ir a saludarlo",
                 selection: "c", cap: 5
             },
             {
-                text: "ignorarlo",
+                text: "Ignorarlo",
                 selection: "c", cap: 5
             },
         ],
     },
     d: {
-        text: "El taxi freno y la cara del conductor se te hace parecida. Tienes su nombre en la punta de la lengua y cuando estas a punto de preguntarselo este saca un objeto extraño y te apunta con el. No es nada parecido a un arma pero aun asi da miedo. De repente te duele la cabeza tan fuerte que no aguantas y te desmayas.",
+        text: "El taxi frenó y la cara del conductor se te hizo parecida. Tienes su nombre en la punta de la lengua y cuando estas a punto de preguntárselo este saca un objeto extraño y te apunta con el. No es nada parecido a un arma pero aun así da miedo. De repente te duele la cabeza tan fuerte que no aguantas y te desmayas.",
         options: optionsDE,
     },
     e: {
-        text: "El taxista freno igualmente y bajo corrio a abrazarte, es Pepe tu amigo de la infancia que no ves hace mucho tiempo. Te abraza extrañamente durante un largo rato y cuando te suelta te empieza a hablar pero no escuchas nada. De repente te duele la cabeza tan fuerte que no aguantas y te desmayas.",
+        text: "El taxista frenó igualmente bajó corriendo a abrazarte, es Pepe tu amigo de la infancia que no ves hace mucho tiempo. Te abraza extrañamente durante un largo rato y cuando te suelta te empieza a hablar pero no escuchas nada. De repente te duele la cabeza tan fuerte que no aguantas y te desmayas.",
         options: optionsDE,
     },
     f: {
-        text: "Todos se estan preparando para el plato principal, y los que no quieran mas, postre seran...",
+        text: "Todos se están preparando para el plato principal, y los que no quieran más, postre serán...",
         options: [
             {
-                text: "faltan",
+                text: "Faltan",
                 selection: "e", cap: 5
             }
         ],

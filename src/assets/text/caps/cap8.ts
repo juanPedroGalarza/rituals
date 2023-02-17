@@ -2,83 +2,83 @@ import { CapMultiple } from "../caps";
 
 const cap: CapMultiple = {
     a: {
-        text: 'Mientras corres como nunca antes miras una vez atras y observas que en todas las ventanas sale algo rojo que se van haciendo cada vez mas grande. Al llegar donde hay mas gente te tranquilizas y tomas mas aire. Ves un taxi.',
+        text: 'Mientras corres como nunca antes miras una vez atrás y observas que en todas las ventanas sale algo rojo que se va haciendo cada vez más grande. Al llegar donde hay mas gente te tranquilizas y tomas más aire. Ves un taxi.',
         options: [
             {
-                text: "hacerle seña",
+                text: "Hacerle seña",
                 selection: "a", cap: 9
             },
             {
-                text: "dejarlo pasar",
+                text: "Dejarlo pasar",
                 selection: "b", cap: 9
             }
         ]
     },
     b: {
-        text: 'Te alejas en silencio hasta el pueblo, por suerte no te persiguio nadie, el pueblo parece estar vacio... Cansado te tiras al piso mirando al cielo, este se pone rojo... Pero parace que no puedes dejar de mirar el cielo rojo...',
+        text: 'Te alejas en silencio hasta el pueblo, por suerte no te persigue nadie, el pueblo parece estar vacío... Cansado te tiras al piso mirando al cielo, este se pone rojo... Pero parece que no puedes dejar de mirar el cielo...',
         options: [
             {
-                text: "rojo",
+                text: "Rojo",
                 selection: "e", cap: 10
             },
             {
-                text: "rojo",
+                text: "Rojo",
                 selection: "e", cap: 10
             },
             {
-                text: "rojo",
+                text: "Rojo",
                 selection: "e", cap: 10
             }
         ]
     },
     c: {
-        text: "¿Por que? Literalmente sigues al lado de la casa, aun te pueden escuchar. Mejor voy a cambiar tu opcion a quedarte durmiendo en el piso.",
+        text: "¿Por qué? Literalmente sigues al lado de la casa, aun te pueden escuchar. Mejor voy a cambiar tu opcion a quedarse durmiendo en el piso.",
         options: [
             {
-                text: "abrir los ojos",
+                text: "Abrir los ojos",
                 selection: "e", cap: 10
             },
             {
-                text: "despertar",
+                text: "Despertar",
                 selection: "e", cap: 10
             },
             {
-                text: "desdormir",
+                text: "Desdormir",
                 selection: "e", cap: 10
             }
         ]
     },
     d: {
-        text: "El postre esta en camino mientras el plato principal esta siendo todo un exito, a todos les gusto tanto que estan sin palabras.",
+        text: "El postre se encuentra en camino mientras el plato principal está siendo todo un éxito, a todos les gusto tanto que se quedaron sin palabras.",
         options: [
             {
-                text: "postre",
+                text: "Postre",
                 selection: "c", cap: 9
             }
         ]
     },
     e: {
-        text: "Te despiertas y estas atado en una silla enfrete de alguien en tu mismas condiciones, a tu alrededor ves gente dormida tambien atada pero con la boca tapada, un humo rojo sale de la nada cuando te das cuenta de que en el piso hay una extraña marca hecha con sal. Un hombre con cabeza de pajaro y el torso pintado de rojo se acerca a ustedes dos con una bebida extraña de color verde, mientras piensa a quien darsela, les da a elegir a ambos.",
+        text: "Te despiertas y estás atado en una silla enfrente de alguien en tus mismas condiciones. A tu alrededor ves gente dormida que también está atada, pero con la boca tapada. Un humo rojo sale de la nada cuando te das cuenta de que en el piso hay una extraña marca hecha con sal. Un hombre con cabeza de pajaro y el torso pintado de rojo se acerca a ustedes dos con una bebida extraña de color verde, mientras piensa a quien darsela, les da a elegir a ambos.",
         options: [
             {
-                text: "tomar",
+                text: "Tomar",
                 selection: "g", cap: 9
             },
             {
-                text: "no tomar",
+                text: "No tomar",
                 selection: "h", cap: 9
             }
         ]
     },
     x: {
-        text: "Cuando despiertas te encuentras atado y con la boca tapada en una especie de asiento muy incomodo. No se ve nada mas que un humo rojo y unas siluetas, estas parecen personas atadas formando un circulo. En el centro hay dos mas y una parada con algo extraño en la cabeza que se parece a el craneo de un ave. Pero es tan grande que debe ser otra cosa.",
+        text: "Cuando despiertas te encuentras atado y con la boca tapada en una especie de asiento muy incómodo. No se ve nada más que un humo rojo y unas siluetas, estas parecen personas atadas formando un círculo. En el centro hay dos más y una parada con algo extraño en la cabeza que se parece a el cráneo de un ave. Pero es tan grande que debe ser otra cosa.",
         options: [
             {
-                text: "no hacer nada",
+                text: "No hacer nada",
                 selection: "e", cap: 9
             },
             {
-                text: "forcejear",
+                text: "Forcejear",
                 selection: "f", cap: 9
             }
         ]

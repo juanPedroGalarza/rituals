@@ -2,25 +2,25 @@ import { CapMultiple } from "../caps";
 
 const cap: CapMultiple = {
     a: {
-        text: 'En silencio te pones a atar la ropa entre si para formar una soga larga, atas un extremo en la canilla y el otro lo tiras por la ventanilla. Mientras bajas escuchas que se abre la puerta del baño e inmediatamente se desata la soga hecha de ropa y caes contra el suelo, por suerte estabas lo suficientemente bajo y la caida solo te saco todo el aire.',
+        text: 'En silencio te pones a atar la ropa entre sí para formar una soga larga, atas un extremo en la canilla y el otro lo tiras por la ventanilla. Mientras bajas escuchas que se abre la puerta del baño e inmediatamente se desata la soga hecha de ropa y caes contra el suelo, por suerte estabas lo suficientemente bajo y la caída solo te saco el aire.',
         options: [
             {
-                text: "levantate y corre",
+                text: "Levantate y corre",
                 selection: "a", cap: 8
             },
             {
-                text: "alejate en silencio",
+                text: "Alejate en silencio",
                 selection: "b", cap: 8
             },
             {
-                text: "llama un taxi",
+                text: "Llama un taxi",
                 selection: "c", cap: 8,
                 condition: "NO_MUTED"
             }
         ]
     },
     b: {
-        text: 'Te pones a pensar que puedes hacer con el cepillo: Tirarlo por la ventana; Cepillarse los dientes; Usarlo como navaja; Tantas cosas... Pero de tanto pensar se te paso el tiempo. Alguien abre la puerta repentinamente y sientes un fuerte golpe en la cabeza que te duerme instantaneamente.',
+        text: 'Te pones a pensar que puedes hacer con el cepillo: Tirarlo por la ventana; cepillarse los dientes; usarlo como navaja; tantas cosas... Pero de tanto pensar se te pasó el tiempo. Alguien abre la puerta repentinamente y sientes un fuerte golpe en la cabeza que te duerme instantáneamente.',
         options: [
             {
                 text: "...",
@@ -37,44 +37,44 @@ const cap: CapMultiple = {
         ],
     },
     c: {
-        text: "En serio... ¿Que pretendias conseguir? ¿Salir afuera con un peinado que los deje perplejos por tu bulleza y te dejen ir sin mas? O acaso ¿querias usarlo como cuchillo?... ¿Sabes que? Ni siquiera te voy a explicar por que, pero de la nada te desmallas ):<",
+        text: "En serio... ¿Qué pretendías conseguir? ¿Salir afuera con un peinado que los deje perplejos por tu belleza y te dejen ir sin más? O acaso ¿querías usarlo como cuchillo?... ¿Sabes que? Ni siquiera te voy a explicar por qué, pero de la nada te desmayas >:(",
         options: [
             {
-                text: "no",
+                text: "No",
                 selection: "x", cap: 8
             },
             {
-                text: "puedes",
+                text: "Puedes",
                 selection: "x", cap: 8
             },
             {
-                text: "hacer",
+                text: "Hacer",
                 selection: "x", cap: 8
             },
             {
-                text: "nada",
+                text: "Nada",
                 selection: "x", cap: 8
             }
         ],
     },
     d: {
-        text: "Voy a suponer que tenias una gran idea de lo que hacer con un jabon... UN JABON... Por dios... Intentas tragartelo por que seguro eso querias, pero terminas intoxicado y te desmallas...",
+        text: "Voy a suponer que tenias una gran idea de lo que hacer con un jabón... UN JABÓN... Por dios... Intentas tragartelo porque seguro eso querías, pero terminas intoxicado y te desmayas...",
         options: [
             {
-                text: "jabon",
+                text: "Jabón",
                 selection: "x", cap: 8
             },
             {
-                text: "JABON",
+                text: "JABÓN",
                 selection: "x", cap: 8
             }
         ]
     },
     x: {
-        text: "Al salir del baño sientes un golpe fuerte en la cabeza te desmaya innmediatamente...",
+        text: "Al salir del baño sientes un golpe fuerte en la cabeza que te desmaya inmediatamente...",
         options: [
             {
-                text: "seguir",
+                text: "Seguir",
                 selection: "x", cap: 8
             }
         ]

@@ -2,11 +2,11 @@ import { CapMultiple, OptionCap } from "../caps";
 
 let optionsAB: Array<OptionCap> = [
     {
-        text: 'mirar por la cerradura',
+        text: 'Mirar por la cerradura',
         selection: "a", cap: 6
     },
     {
-        text: 'salir a ver que sucede',
+        text: 'Salir a ver que sucede',
         selection: "x", cap: 7
     }
 ];
@@ -14,15 +14,15 @@ let optionsAB: Array<OptionCap> = [
 
 const cap: CapMultiple = {
     a: {
-        text: 'Al no escuchar nada se va y te deja que sigas en el baño. Pasa el tiempo mientras vas recuperando la compostura. Escuchas un ruido raro en el comedor, como si estubieran moviendo muebles.',
+        text: 'Al no escuchar nada se va y te deja que sigas en el baño. Pasa el tiempo mientras vas recuperando la compostura. Escuchas un ruido raro en el comedor, como si estuvieran moviendo muebles.',
         options: optionsAB,
     },
     b: {
-        text: 'Al escuchar esto se va y te deja que sigas en el baño. Pasa el tiempo mientras vas recuperando la compostura. Escuchas un ruido raro en el comedor, como si estubieran moviendo muebles.',
+        text: 'Al escuchar esto se va y te deja que sigas en el baño. Pasa el tiempo mientras vas recuperando la compostura. Escuchas un ruido raro en el comedor, como si estuvieran moviendo muebles.',
         options: optionsAB,
     },
     c: {
-        text: "Al caminar sientes un golpe en la cabeza que te deja inconciente... Al parecer no puedes hacer nada.",
+        text: "Al caminar sientes un golpe en la cabeza que te deja inconsciente... Al parecer no puedes hacer nada.",
         options: [
             {
                 text: "...",
@@ -39,33 +39,33 @@ const cap: CapMultiple = {
         ],
     },
     d: {
-        text: "LLegas a tu casa y preparas junto con el Traductor la cena. Al terminar esperas a que entren a los baños para abrir la puerta a Pepe con los paquetes, juntos preparan el plato principal...",
+        text: "Llegas a tu casa y preparas junto con el Traductor la cena. Al terminar esperas a que entren a los baños para abrirle la puerta a Pepe con los paquetes, juntos preparan el plato principal...",
         options: [
             {
-                text: "sal",
+                text: "Sal",
                 selection: "b", cap: 6
             },
             {
-                text: "sillas",
+                text: "Sillas",
                 selection: "b", cap: 6
             },
             {
-                text: "sogas",
+                text: "Sogas",
                 selection: "b", cap: 6
             }
         ],
     },
     e: {
-        text: "Nuevos invitados llegan y la entrada se perdieron. Aun faltan mas asi que los mandas a buscar los suficientes para poder disfrutar compartiendo con mas gente.",
+        text: "Nuevos invitados llegaron, se perdieron la entrada. Aún faltan mas asi que los mandas a buscar los suficientes para poder disfrutar compartiendo con mas gente.",
         options: [
             {
-                text: "plato principal",
+                text: "Plato principal",
                 selection: "d", cap: 8
             }
         ],
     },
     f: {
-        text: "Te uso varias veces antes de llegar a una casa enorme, que casa mas hermosa.",
+        text: "Te usó varias veces antes de llegar a una casa enorme, que casa más hermosa.",
         options: [
             {
                 text: ":)",

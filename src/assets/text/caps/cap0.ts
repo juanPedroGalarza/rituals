@@ -2,30 +2,30 @@ import { CapMultiple } from "../caps";
 
 const cap: CapMultiple = {
     a:{
-    text: "Estas en medio de la carretera y se acerca un auto, hay varias opciones para hacer:",
+    text: "Estás en medio de la carretera y se acerca un auto, hay varias opciones para hacer:",
     options: [
         {
-            text: "hacer seña para que el auto te lleve a casa",
+            text: "Hacer seña para que el auto te lleve a casa",
             selection: "a", cap: 1
         },
         {
-            text: "saludar",
+            text: "Saludar",
             selection: "b", cap: 1
         },
         {
-            text: "tirarle una piedra",
+            text: "Tirarle una piedra",
             selection: "c", cap: 1
         },
         {
-            text: "dejarlo pasar",
+            text: "Dejarlo pasar",
             selection: "d", cap: 1
         },
         {
-            text: "quedarse quieto",
+            text: "Quedarse quieto",
             selection: "e", cap: 1
         },
         {
-            text: "nada",
+            text: "Nada",
             selection: "f", cap: 11
         },
     ],
