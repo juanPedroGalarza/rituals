@@ -2,7 +2,7 @@ import { CapMultiple } from "../caps";
 
 const cap: CapMultiple = {
   a: {
-    text: "Observas a alguien tirando sal en el piso de lo que antes era el comedor, pero ahora está vacío. En tu vista se te cruza el conductor, le da un cuchillo al que estaba poniendo la sal y este empieza a hacer marcas en el piso. Al ver todo esto quedas impactado y sigues mirando un poco más, cuando alguien trae una especie de asiento que definitivamente no era uno de los que estaban usando antes. Te das la vuelta y observamos una ventana como tu única alternativa, en el baño se encuentran unos objetos que talvez podrias usar:",
+    text: "Observas a alguien tirando sal en el piso de lo que antes era el comedor, pero ahora está vacío. En tu vista se te cruza el conductor, le da un cuchillo al que estaba poniendo la sal y este empieza a hacer marcas en el piso. Al ver todo esto quedas impactado y sigues mirando un poco más, cuando alguien trae una especie de asiento que definitivamente no era uno de los que estaban usando antes. Te das la vuelta y observas una ventana como tu única alternativa, en el baño se encuentran unos objetos que talvez podrias usar:",
     options: [
       {
         text: "Cepillo",
