@@ -10,7 +10,7 @@ import {
   UserState,
   setSmileEnd,
   setWritable,
-  setRed
+  setRed,
 } from "../features/game/gameSlice";
 import { StoreInterface } from "../features/store";
 import { Box } from "@mui/system";
@@ -18,13 +18,14 @@ import { Button } from "@mui/material";
 import { useCallback, useState } from "react";
 
 export default function PanelOptions() {
-
-  const { isFinal, selected, optSelected, isRed }
-    = useSelector<StoreInterface, UserState>((state) => state.game);
+  const { isFinal, selected, optSelected, isRed } = useSelector<
+    StoreInterface,
+    UserState
+  >((state) => state.game);
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const toDoSelected = (action: string) => {
     switch (action) {
       case "IS_MUTED":
@@ -63,7 +64,7 @@ export default function PanelOptions() {
       dispatch(nextCap(optSelected));
     } else {
       dispatch(setFinal());
-    };
+    }
     setTimeout((): void => {
       dispatch(setWritable(true));
     }, 500);
@@ -75,40 +76,45 @@ export default function PanelOptions() {
     }, 500);
   }, []);
 
-
   function finalOptions() {
     return (
       <>
         <Button
-          color={isRed?"secondary":"primary"}
+          color={isRed ? "secondary" : "primary"}
           variant="contained"
-          onClick={playAgain}
-        >SI</Button>
+          onClick={playAgain}>
+          SI
+        </Button>
         <Button
-          color={isRed?"secondary":"primary"}
+          color={isRed ? "secondary" : "primary"}
           variant="contained"
-          onClick={() => navigate("/")}
-        >NO</Button>
+          onClick={() => navigate("/")}>
+          NO
+        </Button>
       </>
     );
   };
 
   return (
     <Box className="panel-options">
-      {isFinal ?
+      {isFinal ? (
         finalOptions()
-        :
+      ) : (
         <>
-          <OptionCapButton options={selected.options} select={(v: boolean) => setIsSelected(v)} />
+          <OptionCapButton
+            options={selected.options}
+            select={(v: boolean) => setIsSelected(v)}
+          />
           <Button
             type="button"
             variant="contained"
-            color={isRed?"secondary":"primary"}
+            color={isRed ? "secondary" : "primary"}
             disabled={!isSelected}
             onClick={isSelected ? next : undefined}>
-            {isSelected ? "Continuar" : "Elige"}</Button>
+            {isSelected ? "Continuar" : "Elige"}
+          </Button>
         </>
-      }
+      )}
     </Box>
   );
 };

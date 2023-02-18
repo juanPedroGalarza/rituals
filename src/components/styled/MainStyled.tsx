@@ -1,4 +1,10 @@
-import {Container, styled, Box, BoxProps, ContainerProps} from "@mui/material"
+import {
+  Container,
+  styled,
+  Box,
+  BoxProps,
+  ContainerProps,
+} from "@mui/material";
 
 const MainParent = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -11,17 +17,17 @@ const MainParent = styled(Box)(({ theme }) => ({
     width: "100%",
     minHeight: "87vh",
     gap: "10px",
-  }
+  },
 }));
 
-export default function MainStyled
-  (props: ContainerProps & { mainParentProps?: BoxProps }): JSX.Element
-{
+export default function MainStyled(
+  props: ContainerProps & { mainParentProps?: BoxProps }
+): JSX.Element {
   return (
     <MainParent {...props.mainParentProps}>
       <Container maxWidth="xl" {...props}>
-      {props.children}
+        {props.children}
       </Container>
     </MainParent>
-  )
+  );
 }

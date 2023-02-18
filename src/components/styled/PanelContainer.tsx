@@ -26,8 +26,8 @@ const PanelContainer = styled(Container)(({ theme }) => ({
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "space-evenly",
-    }
-  }
+    },
+  },
 }));
 
 export default PanelContainer;

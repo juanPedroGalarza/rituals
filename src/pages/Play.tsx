@@ -8,22 +8,21 @@ import { setWrited, UserState } from "../features/game/gameSlice";
 import { useEffect } from "react";
 
 export default function Play() {
-  const { isWrited, writable } =
-    useSelector<StoreInterface, UserState>(state => state.game);
-  const dispatch = useDispatch()
+  const { isWrited, writable } = useSelector<StoreInterface, UserState>(
+    (state) => state.game
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setWrited(false))
+    dispatch(setWrited(false));
   }, [dispatch]);
 
   return (
     <MainStyled>
       <PanelContainer maxWidth="md">
         <PanelText />
-        {isWrited && writable ?
-        <PanelOptions />
-        :null}
+        {isWrited && writable ? <PanelOptions /> : null}
       </PanelContainer>
     </MainStyled>
   );
-};
+}

@@ -26,11 +26,11 @@ const NavStyled = styled(AppBar)(({ theme }) => ({
         transition: `all ${theme.transitions.duration.enteringScreen}ms`,
       },
       "&:hover .MuiTypography-root": {
-        transform: "scale(1)"
+        transform: "scale(1)",
       },
     },
     "& .MuiButtonGroup-vertical": {
-      display: "none"
+      display: "none",
     },
   },
   "@media (max-width: 768px)": {
@@ -38,13 +38,13 @@ const NavStyled = styled(AppBar)(({ theme }) => ({
       flexDirection: "column",
       gap: 0,
       "& .MuiButtonGroup-vertical": {
-        display: "inline-flex"
+        display: "inline-flex",
       },
       "& .MuiButtonGroup-contained": {
-        display: "none"
+        display: "none",
       },
     },
-  }
+  },
 }));
 
-export default NavStyled
+export default NavStyled;
